@@ -1,0 +1,24 @@
+{
+  "name": "tally",
+  "version": "0.0.0",
+  "description": "counts things",
+  "main": "index.js",
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "scripts": {
+    "test": "mocha test/*_test.pogo"
+  },
+  "repository": "",
+  "author": "@joshski",
+  "license": "BSD",
+  "dependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.8.2",
+    "pogo": "~0.3.2",
+    "express": "~3.1.0",
+    "mongodb": "~1.2.13",
+    "httpism": "git://github.com/featurist/httpism.git#not_just_get"
+  }
+}
