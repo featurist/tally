@@ -8,6 +8,10 @@ app.use(express.body parser())
 exports.listen (port) =
 
     app.post '/tally' @(req, res)
+        if (!req.body.counter || !req.body.response)
+            res.status(400).end()
+            return
+        
         tally.increment (req.body) @(err)
             res.set header 'content-type' 'application/json'
             res.end '{}'

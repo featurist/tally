@@ -31,7 +31,25 @@ describe 'app'
             record.counter.should.equal 'abc'
             record.response.should.equal '123'
             record.created at.should.exist
-        
+    
+    describe 'POST /tally, with missing counter'
+
+        it 'responds with 400'
+            response = httpism.post! "http://localhost:3001/tally" {
+                body = '{ "response": "happy days" }'
+                headers = { 'content-type' = 'application/json' }
+            }
+            response.status code.should.equal 400
+
+    describe 'POST /tally, with missing response'
+
+        it 'responds with 400'
+            response = httpism.post! "http://localhost:3001/tally" {
+                body = '{ "counter": "the a-team" }'
+                headers = { 'content-type' = 'application/json' }
+            }
+            response.status code.should.equal 400
+    
     describe 'GET /tally/counts'
 
         it 'responds with grouped counts of tally records'
